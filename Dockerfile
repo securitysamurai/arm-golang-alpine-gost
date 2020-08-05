@@ -10,7 +10,6 @@ ENV REPOSITORY github.com/securitysamurai/arm-golang-alpine-gost
 COPY . $GOPATH/src/$REPOSITORY
 RUN cd $GOPATH/src/$REPOSITORY && make install
 
-
 FROM securitysamurai/arm-golang-alpine-gost
 
 MAINTAINER yudanja
