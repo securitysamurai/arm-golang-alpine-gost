@@ -1,10 +1,10 @@
 FROM nathanosman/alpine-golang-armhf
 
-RUN apk add --no-cache \
-        git \
+RUN apk update
+RUN apk add git \
         make \
         gcc 
- #       musl-dev
+        musl-dev
 
 ENV REPOSITORY github.com/securitysamurai/arm-golang-alpine-gost
 COPY . $GOPATH/src/$REPOSITORY
