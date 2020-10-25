@@ -3,8 +3,8 @@ FROM nathanosman/alpine-golang-armhf
 RUN apk add --no-cache \
         git \
         make \
-        gcc \
-        musl-dev
+        gcc 
+ #       musl-dev
 
 ENV REPOSITORY github.com/securitysamurai/arm-golang-alpine-gost
 COPY . $GOPATH/src/$REPOSITORY
