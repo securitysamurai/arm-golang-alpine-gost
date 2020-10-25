@@ -3,7 +3,7 @@ FROM nathanosman/alpine-golang-armhf
 RUN apk update
 RUN apk add git \
         make \
-        gcc 
+        gcc \
         musl-dev
 
 ENV REPOSITORY github.com/securitysamurai/arm-golang-alpine-gost
