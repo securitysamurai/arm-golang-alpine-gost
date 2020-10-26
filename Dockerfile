@@ -1,7 +1,7 @@
 FROM nathanosman/alpine-golang-armhf
 
 RUN apt update
-RUN apt intall git \
+RUN apt install git \
         make \
         gcc \
         musl-dev
