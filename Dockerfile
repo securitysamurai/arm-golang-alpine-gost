@@ -1,7 +1,7 @@
 FROM nathanosman/alpine-golang-armhf
 
-RUN apk update
-RUN apk add git \
+RUN apt update
+RUN apt intall git \
         make \
         gcc \
         musl-dev
@@ -17,7 +17,7 @@ MAINTAINER yudanja
 ENV LOGDIR /var/log/vuls
 ENV WORKDIR /vuls
 
-RUN apk add --no-cache ca-certificates git \
+RUN apt install --no-cache ca-certificates git \
     && mkdir -p $WORKDIR $LOGDIR
 
 COPY --from=builder /go/bin/gost /usr/local/bin/
