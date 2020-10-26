@@ -6,10 +6,10 @@ RUN apt install git \
         gcc \
         musl-dev
 
-git clone https://github.com/knqyf263/gost.git
-cd gost
-go build .
-make
+RUN git clone https://github.com/knqyf263/gost.git
+RUN cd gost
+RUN go build .
+RUN make
 
 
 MAINTAINER yudanja
