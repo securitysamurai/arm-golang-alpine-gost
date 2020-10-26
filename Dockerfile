@@ -1,4 +1,4 @@
-FROM nathanosman/alpine-golang-armhf
+FROM arm32v7/golang
 
 RUN apt update
 RUN apt install git \
@@ -6,11 +6,11 @@ RUN apt install git \
         gcc \
         musl-dev
 
-ENV REPOSITORY github.com/securitysamurai/arm-golang-alpine-gost
-COPY . $GOPATH/src/$REPOSITORY
-RUN cd $GOPATH/src/$REPOSITORY && make install
+git clone https://github.com/knqyf263/gost.git
+cd gost
+go build .
+make
 
-FROM securitysamurai/arm-golang-alpine-gost
 
 MAINTAINER yudanja
 
@@ -20,7 +20,7 @@ ENV WORKDIR /vuls
 RUN apt install --no-cache ca-certificates git \
     && mkdir -p $WORKDIR $LOGDIR
 
-COPY --from=builder /go/bin/gost /usr/local/bin/
+COPY gost /usr/local/bin/
 
 VOLUME ["$WORKDIR", "$LOGDIR"]
 WORKDIR $WORKDIR
