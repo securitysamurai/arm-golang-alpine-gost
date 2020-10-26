@@ -1,4 +1,5 @@
-FROM arm32v7/golang
+FROM nathanosman/alpine-golang-armhf
+#arm32v7/golang
 
 RUN apt update
 RUN apt install git \
