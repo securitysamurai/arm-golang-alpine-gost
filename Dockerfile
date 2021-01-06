@@ -5,7 +5,7 @@ RUN apt update
 RUN apt install git \
         make \
         gcc \
-        musl-dev
+        msl-dev
 
 RUN git clone https://github.com/knqyf263/gost.git
 RUN cd gost
